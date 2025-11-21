@@ -8,7 +8,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: Colors.white.withOpacity(0.05),
       child: const Column(children: [
         UserInfoListTile(image: Assets.imagesAvatar1, title: 'abdelmalek el-hafidy', subtitle: 'assilajuen@gmail.com')
       ]),
