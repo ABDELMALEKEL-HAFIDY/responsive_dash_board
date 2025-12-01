@@ -13,19 +13,21 @@ class DrawerItemsListView extends StatefulWidget {
 class _DrawerItemsListViewState extends State<DrawerItemsListView> {
   int activateIndex = 0;
   final List<DrawerItemModels> items = [
-    DrawerItemModels(title: 'Dashboard', image: Assets.imagesDashboard),
+    DrawerItemModels(title: 'Dashboard',
+     image: Assets.imagesDashboard),
     DrawerItemModels(
       title: 'My Transaction',
       image: Assets.imagesMytransaction,
     ),
-    DrawerItemModels(title: 'Statistics', image: Assets.imagesMytransaction),
+    DrawerItemModels(title: 'Statistics', 
+    image: Assets.imagesStatistic),
     DrawerItemModels(
-      title: 'Wallets History',
-      image: Assets.imagesMytransaction,
+      title: 'Wallet Account',
+      image: Assets.imagesWalletaccount,
     ),
     DrawerItemModels(
       title: 'My Investments',
-      image: Assets.imagesMytransaction,
+      image: Assets.imagesMyinvestement,
     ),
   ];
 
