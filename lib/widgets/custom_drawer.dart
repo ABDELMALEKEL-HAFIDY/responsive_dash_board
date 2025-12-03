@@ -9,30 +9,47 @@ import 'package:responsive_dash_board/widgets/user_info_list_tile.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white.withOpacity(0.05),
-      child: Column(
-        children: [
-          UserInfoListTile(
-            image: Assets.imagesAvatar1,
-            title: 'abdelmalek el-hafidy',
-            subtitle: 'assilajuen@gmail.com',
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: UserInfoListTile(
+              image: Assets.imagesAvatar1,
+              title: 'abdelmalek el-hafidy',
+              subtitle: 'assilajuen@gmail.com',
+            ),
           ),
-          const SizedBox(height: 8),
-          Expanded(child: DrawerItemsListView(),),
-          Expanded(child: SizedBox()),
-          InActiveDrawerItem(drawerItemModels: DrawerItemModels(title: "Setting system", image: Assets.imagesSetting)),
-          InActiveDrawerItem(drawerItemModels: DrawerItemModels(title: "Logout account", image: Assets.imagesLogout)),
 
-          const SizedBox(height: 48),
+          SliverToBoxAdapter(child: SizedBox(height: 8)),
+          DrawerItemsListView(),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                Expanded(child: SizedBox()),
+                InActiveDrawerItem(
+                  drawerItemModels: DrawerItemModels(
+                    title: "Setting system",
+                    image: Assets.imagesSetting,
+                  ),
+                ),
+                InActiveDrawerItem(
+                  drawerItemModels: DrawerItemModels(
+                    title: "Logout account",
+                    image: Assets.imagesLogout,
+                  ),
+                ),
 
-          
+                const SizedBox(height: 48),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
