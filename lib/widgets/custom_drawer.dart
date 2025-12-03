@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/models/drawer_item_models.dart';
 
 import 'package:responsive_dash_board/utils/app_images.dart';
+import 'package:responsive_dash_board/widgets/active_and_inactive_item.dart';
 import 'package:responsive_dash_board/widgets/drawer_item.dart';
 import 'package:responsive_dash_board/widgets/drawer_items_list_view.dart';
 import 'package:responsive_dash_board/widgets/user_info_list_tile.dart';
@@ -21,7 +22,14 @@ class CustomDrawer extends StatelessWidget {
             subtitle: 'assilajuen@gmail.com',
           ),
           const SizedBox(height: 8),
-          DrawerItemsListView(),
+          Expanded(child: DrawerItemsListView(),),
+          Expanded(child: SizedBox()),
+          InActiveDrawerItem(drawerItemModels: DrawerItemModels(title: "Setting system", image: Assets.imagesSetting)),
+          InActiveDrawerItem(drawerItemModels: DrawerItemModels(title: "Logout account", image: Assets.imagesLogout)),
+
+          const SizedBox(height: 48),
+
+          
         ],
       ),
     );
