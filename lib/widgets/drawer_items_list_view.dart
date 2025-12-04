@@ -41,7 +41,7 @@ class _DrawerItemsListViewState extends State<DrawerItemsListView> {
             if (activateIndex != index) {
               setState(() {
                 activateIndex = index;
-                print(activateIndex);
+               // print(activateIndex);
               });
             }
           },
