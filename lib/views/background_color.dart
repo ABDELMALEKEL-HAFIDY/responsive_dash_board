@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class BackgroundColor extends StatelessWidget {
@@ -11,24 +10,30 @@ class BackgroundColor extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // gradient background
+        // 🌈 Pastel Gradient (نفس اللي في الصورة)
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color.fromARGB(255, 101, 30, 119), Color(0xFF551354), Color.fromARGB(255, 40, 7, 54)],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color(0xFFFDE2EB), // soft pink
+                Color(0xFFE6E0FF), // soft purple
+                Color(0xFFD7F8FF), // soft cyan
+              ],
             ),
           ),
         ),
 
-        // glass blur
+        // ✨ Soft Glass Blur Layer
         BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 60, sigmaY: 60),
-          child: Container(color: Colors.white.withOpacity(0.05)),
+          filter: ImageFilter.blur(sigmaX: 30, sigmaY: 30),
+          child: Container(
+            color: Colors.white.withOpacity(0.15),
+          ),
         ),
 
-        child, // ← محتوى الصفحة فوق الخلفية
+        child, 
       ],
     );
   }
