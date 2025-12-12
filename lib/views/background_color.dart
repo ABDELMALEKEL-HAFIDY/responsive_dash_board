@@ -15,14 +15,9 @@ class BackgroundColor extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                Color(0xFFFEE3E0),
-                Color(0xFFE6D5FA),
-                Color(0xFFFDD1F7),
-                Color(0xFFFFE6CC),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
+              colors: [Color.fromARGB(255, 101, 30, 119), Color(0xFF551354), Color.fromARGB(255, 40, 7, 54)],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
             ),
           ),
         ),

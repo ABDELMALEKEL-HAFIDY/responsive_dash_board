@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:responsive_dash_board/models/drawer_item_models.dart';
-import 'package:responsive_dash_board/utils/app_styles.dart';
+
 import 'package:responsive_dash_board/widgets/active_and_inactive_item.dart';
 
 class DrawerItem extends StatelessWidget {
@@ -15,8 +15,7 @@ class DrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return isActive
-        ?  ActiveDrawerItem(drawerItemModels: drawerItemModels)
+        ? ActiveDrawerItem(drawerItemModels: drawerItemModels)
         : InActiveDrawerItem(drawerItemModels: drawerItemModels);
   }
 }
-
