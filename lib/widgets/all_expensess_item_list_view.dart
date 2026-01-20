@@ -3,7 +3,6 @@ import 'package:responsive_dash_board/models/all_expensess_item_model.dart';
 import 'package:responsive_dash_board/utils/app_images.dart';
 import 'package:responsive_dash_board/widgets/all_expenssess_item.dart';
 
-
 class AllExpensessItemListView extends StatelessWidget {
   const AllExpensessItemListView({super.key});
   static const items = [
@@ -36,15 +35,13 @@ class AllExpensessItemListView extends StatelessWidget {
           return Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: AllExpenssessItem(
-                isSelected: false,
-                itemModel: item),
+              child: AllExpenssessItem(isSelected: false, itemModel: item),
             ),
           );
         } else {
-          return Expanded(child: AllExpenssessItem(
-            isSelected: false,
-            itemModel: item));
+          return Expanded(
+            child: AllExpenssessItem(isSelected: false, itemModel: item),
+          );
         }
       }).toList(),
       //children: items.map((e) => Expanded(child: AllExpenssessItem(itemModel: e))).toList(),
