@@ -3,9 +3,16 @@ import 'package:responsive_dash_board/models/all_expensess_item_model.dart';
 import 'package:responsive_dash_board/utils/app_images.dart';
 import 'package:responsive_dash_board/widgets/all_expenssess_item.dart';
 
-class AllExpensessItemListView extends StatelessWidget {
+class AllExpensessItemListView extends StatefulWidget {
   const AllExpensessItemListView({super.key});
-  static const items = [
+
+  @override
+  State<AllExpensessItemListView> createState() =>
+      _AllExpensessItemListViewState();
+}
+
+class _AllExpensessItemListViewState extends State<AllExpensessItemListView> {
+  final items = [
     AllExpensessItemModel(
       image: Assets.imagesBalance,
       title: 'Balance',
@@ -25,6 +32,7 @@ class AllExpensessItemListView extends StatelessWidget {
       price: r'$20,129',
     ),
   ];
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -33,18 +41,40 @@ class AllExpensessItemListView extends StatelessWidget {
         var item = e.value;
         if (index == 1) {
           return Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: AllExpenssessItem(isSelected: false, itemModel: item),
+            child: GestureDetector(
+              onTap: () {
+                updateIndex(index);
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: AllExpenssessItem(
+                  isSelected: selectedIndex == index,
+                  itemModel: item,
+                ),
+              ),
             ),
           );
         } else {
           return Expanded(
-            child: AllExpenssessItem(isSelected: false, itemModel: item),
+            child: GestureDetector(
+              onTap: () {
+                updateIndex(index);
+              },
+              child: AllExpenssessItem(
+                isSelected: selectedIndex == index,
+                itemModel: item,
+              ),
+            ),
           );
         }
       }).toList(),
       //children: items.map((e) => Expanded(child: AllExpenssessItem(itemModel: e))).toList(),
     );
+  }
+
+  void updateIndex(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
   }
 }
