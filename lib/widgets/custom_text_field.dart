@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/utils/app_styles.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key});
-
+  const CustomTextField({super.key, required this.hint});
+  final String hint;
   @override
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        fillColor:  Color(0xFFFAFAFA),
+        hintText: hint,
+        hintStyle: AppStyles.styleRegular16.copyWith(color: const Color(0xFFAAAAAA)),
+        fillColor: Color(0xFFFAFAFA),
         filled: true,
         border: buildBorder(),
         enabledBorder: buildBorder(),
         focusedBorder: buildBorder(),
-      
       ),
     );
   }
 }
+
 OutlineInputBorder buildBorder() {
-  return  OutlineInputBorder(
+  return OutlineInputBorder(
     borderRadius: BorderRadius.circular(12),
     borderSide: BorderSide(color: Color(0xFFFAFAFA)),
   );
 }
-          
-       
