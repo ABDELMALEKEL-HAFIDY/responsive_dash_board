@@ -21,6 +21,7 @@ class MyCard extends StatelessWidget {
           ),
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
               contentPadding: EdgeInsets.only(left: 31, right: 42, top: 16),
@@ -31,6 +32,24 @@ class MyCard extends StatelessWidget {
               subtitle: Text('Syah Bandi', style: AppStyles.styleMedium20),
               trailing: SvgPicture.asset(Assets.imagesGallery),
             ),
+            Expanded(child: SizedBox()),
+            Padding(
+              padding: const EdgeInsets.only(right: 48 -24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                '0918 8124 0042 8129',
+                style: AppStyles.styleSemiBold24.copyWith(color: Colors.white),
+              ),
+              Text(
+                '12/30 - 124',
+                style: AppStyles.styleRegular16.copyWith(color: Colors.white),
+              ),
+                ],
+              ),
+            ),
+            SizedBox(height: 54 - 28),
           ],
         ),
       ),
