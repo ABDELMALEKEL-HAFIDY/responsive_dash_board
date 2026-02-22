@@ -36,7 +36,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
       sections: [
         PieChartSectionData(
           titlePositionPercentageOffset: activeIndex == 0?1.5  :null,
-          titleStyle: AppStyles.styleMedium16.copyWith(
+          titleStyle: AppStyles.styleMedium16(context).copyWith(
             color: activeIndex == 0 ? null : Colors.white,
           ),
           value: 40,
@@ -46,7 +46,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
         ),
         PieChartSectionData(
           titlePositionPercentageOffset: activeIndex == 1?2.2  :null,
-          titleStyle: AppStyles.styleMedium16.copyWith(color:activeIndex == 1 ? null: Colors.white),
+          titleStyle: AppStyles.styleMedium16(context).copyWith(color:activeIndex == 1 ? null: Colors.white),
           title: activeIndex == 1 ? 'Design product' : '25%',
           radius: activeIndex == 1 ? 60 : 50,
           color: const Color(0xFF4BD7F2),
@@ -54,7 +54,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
         ),
         PieChartSectionData(
           titlePositionPercentageOffset: activeIndex == 2?1.4  :null,
-          titleStyle: AppStyles.styleMedium16.copyWith(color:activeIndex == 2 ? null: Colors.white),
+          titleStyle: AppStyles.styleMedium16(context).copyWith(color:activeIndex == 2 ? null: Colors.white),
           title: activeIndex == 2 ? 'Product royalti' : '20%',
           radius: activeIndex == 2 ? 60 : 50,
           color: const Color(0xFF064060),
@@ -62,7 +62,7 @@ class _DetailedIncomeChartState extends State<DetailedIncomeChart> {
         ),
         PieChartSectionData(
           titlePositionPercentageOffset: activeIndex == 3?1.4  :null,
-          titleStyle: AppStyles.styleMedium16.copyWith(color:activeIndex == 3 ? null: Colors.white),
+          titleStyle: AppStyles.styleMedium16(context).copyWith(color:activeIndex == 3 ? null: Colors.white),
           title: activeIndex == 3 ? 'Other' : '22%',
           radius: activeIndex == 3 ? 60 : 50,
           color: const Color(0xFFE2DECD),

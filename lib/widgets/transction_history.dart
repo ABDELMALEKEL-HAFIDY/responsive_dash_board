@@ -13,7 +13,7 @@ class TransctionHistory extends StatelessWidget {
         TransctionHistoryHeader(),
         const SizedBox(height: 20),
         Text('13 April 2025 ',
-        style: AppStyles.styleMedium16,
+        style: AppStyles.styleMedium16(context),
         ),
         SizedBox(height: 20),
         TransctionHistoryListView(),
@@ -32,8 +32,8 @@ class TransctionHistoryHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text("Transction History", style: AppStyles.styleSemiBold20),
-        Text('See All', style: AppStyles.styleMedium16.copyWith(color: Color(0xFF4EB7F2)),),
+        Text("Transction History", style: AppStyles.styleSemiBold20(context)),
+        Text('See All', style: AppStyles.styleMedium16(context).copyWith(color: Color(0xFF4EB7F2)),),
       ],
     );
   }

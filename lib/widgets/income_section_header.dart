@@ -13,7 +13,7 @@ class IncomeSectionHeader extends StatelessWidget {
       children: [
         Text(
           'Income',
-          style: AppStyles.styleSemiBold20,
+          style: AppStyles.styleSemiBold20(context),
           ),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 16,vertical: 12),
@@ -28,7 +28,7 @@ class IncomeSectionHeader extends StatelessWidget {
               child: Row(
                 children: [
                   Text('Monthly',
-                  style: AppStyles.styleMedium16,
+                  style: AppStyles.styleMedium16(context),
                   ),
                   SizedBox(width: 16,),
                   Transform.rotate(
